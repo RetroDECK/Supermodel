@@ -1,9 +1,8 @@
 app-id: net.retrodeck.supermodel
 runtime: org.kde.Platform
-# runtime-version: "6.5"
-runtime-version: 5.15-23.08 # maybe solving the libflac issue?
+runtime-version: "6.5"
 sdk: org.kde.Sdk
-command: /app/bin/mame
+command: /app/bin/supermodel
 
 finish-args:
   - --socket=wayland

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/XargonWan/RetroDECK --depth=1 RetroDECK
+git clone https://github.com/RetroDECK/RetroDECK --depth=1 RetroDECK
 
 # Creating MAME manifest
 manifest_header="manifest-header.yml"

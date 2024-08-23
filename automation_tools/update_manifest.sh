@@ -8,7 +8,7 @@ module="module.yml"
 output_manifest="net.retrodeck.supermodel.yml"
 command="/app/bin/supermodel" 
 
-# sed -n '/command/q;p' RetroDECK/net.retrodeck.retrodeck.yml > "$manifest_header"  TEMPORARY DISABLED TO TRY A BUILD WITH ANOTHER RUNTIME
+sed -n '/command/q;p' RetroDECK/net.retrodeck.retrodeck.yml > "$manifest_header"
 echo -e "command: $command\n" >> "$manifest_header"
 sed -i '/^[[:space:]]*#/d' "$manifest_header"
 sed -i 's/[[:space:]]*#.*$//' "$manifest_header"

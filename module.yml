@@ -4,3 +4,7 @@ modules:
     buildsystem: simple
     build-commands:
       - make -f Makefiles/Makefile.UNIX NET_BOARD=1
+    sources:
+      - type: git
+        url: https://github.com/RetroDECK/Supermodel
+        branch: master

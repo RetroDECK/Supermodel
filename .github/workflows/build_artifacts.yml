@@ -1,4 +1,4 @@
-name: "Build supermodel Artifacts for RetroDECK"
+name: "Build Artifacts for RetroDECK"
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
 
-  Building_Supermodel:
+  Building:
     runs-on: ubuntu-latest
     steps:
 
@@ -27,11 +27,11 @@ jobs:
       - name: "Install dependencies"
         run: "automation_tools/install_dependencies.sh"
 
-      - name: "Creating supermodel manifest"
-        run: "/bin/bash ${GITHUB_WORKSPACE}/automation_tools/update_supermodel_manifest.sh"
+      - name: "Creating manifest"
+        run: "/bin/bash ${GITHUB_WORKSPACE}/automation_tools/update_manifest.sh"
 
-      # - name: "[DEBUG] Outputting manifest"
-      #   run: cat net.retrodeck.supermodel.yml
+      - name: "[DEBUG] Outputting manifest"
+        run: cat net.retrodeck.supermodel.yml
 
       - name: "Build flatpak"
         id: "flatpak-download"
@@ -40,8 +40,8 @@ jobs:
           flatpak-builder --user --force-clean \
             --install-deps-from=flathub \
             --install-deps-from=flathub-beta \
-            --repo=${GITHUB_WORKSPACE}/supermodel-repo \
-            "${GITHUB_WORKSPACE}"/supermodel-build-dir \
+            --repo=${GITHUB_WORKSPACE}/repo \
+            "${GITHUB_WORKSPACE}"/build-dir \
             net.retrodeck.supermodel.yaml
 
       - name: "Exporting dir tree"
@@ -50,7 +50,7 @@ jobs:
 
       - name: Create Artifact for RetroDECK
         run: | 
-          tar -czf ${GITHUB_WORKSPACE}/Supermodel-Artifact.tar.gz -C ${GITHUB_WORKSPACE}/supermodel-build-dir .
+          tar -czf ${GITHUB_WORKSPACE}/Supermodel-Artifact.tar.gz -C ${GITHUB_WORKSPACE}/build-dir .
           hash=($(sha256sum ${GITHUB_WORKSPACE}/Supermodel-Artifact.tar.gz))
           echo $hash > ${GITHUB_WORKSPACE}/RetroDECK-Artifact-cooker.sha
           mv -f RetroDECK-Artifact-cooker.* ${{ secrets.ARTIFACT_REPO }}

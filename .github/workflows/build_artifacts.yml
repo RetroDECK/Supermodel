@@ -42,7 +42,7 @@ jobs:
             --install-deps-from=flathub-beta \
             --repo=${GITHUB_WORKSPACE}/repo \
             "${GITHUB_WORKSPACE}"/build-dir \
-            net.retrodeck.supermodel.yaml
+            net.retrodeck.supermodel.yml
 
       - name: "Exporting dir tree"
         id: tree

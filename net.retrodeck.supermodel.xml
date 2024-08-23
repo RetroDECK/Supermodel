@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>net.retrodeck.supermodel.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>supermodel Launcher</name>
+  <summary>Browse and play your supermodel quest collection.</summary>
+  <description>
+    <p>
+      supermodel Launcher is a desktop GUI frontend that allows to browse and play to supermodel quests, which are video games made with the supermodel game engine.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.supermodel-games.org/data/en/entities/article/old/2016/07/images/supermodel-launcher.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://www.supermodel-games.org/</url>
+  <update_contact>christopho@supermodel-games.org</update_contact>
+  ​<launchable type="desktop-id">net.retrodeck.supermodel.desktop</launchable>
+  <project_group>supermodel</project_group>
+  <developer_name>supermodel Team</developer_name>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+    <content_attribute id="violence-bloodshed">mild</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="1.6.5" date="2021-04-06" />
+  </releases>
+</component>

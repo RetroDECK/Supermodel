@@ -1,0 +1,6 @@
+modules:
+
+  - name: supermodel
+    buildsystem: simple
+    build-commands:
+      - make -f Makefiles/Makefile.UNIX NET_BOARD=1
